@@ -73,7 +73,7 @@ const Navbar = () => {
             {[
               { name: "Home", path: "/" },
               { name: "About us", path: "/about-us" },
-              { name: "Career", path: "/career" },
+              { name: "Career", path: "/carrer" },
               { name: "Contact us", path: "/contact-us" }
             ].map(({ name, path }) => (
               <div
