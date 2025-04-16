@@ -18,7 +18,7 @@ const CareerPage = () => {
           <div className="flex justify-center">
             <a
               href="mailto:careers@example.com"
-              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base lg:text-base"
+              className="inline-block bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base lg:text-base"
             >
               Send Your Resume: azhizensolutions.com
             </a>
