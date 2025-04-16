@@ -12,7 +12,7 @@ const AboutUsSection = () => {
             <span style={{ color: "#00B4D9" }}>W</span>HO &nbsp;
             <span style={{ color: "#00B4D9" }}>A</span>RE &nbsp;
             <span style={{ color: "#00B4D9" }}>W</span>E?
-          </span>26
+          </span>
         </h2>
 
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -46,7 +46,7 @@ const AboutUsSection = () => {
           </div>
 
           {/* Right Side: Image */}
-          <div className="relative lg:w-[350px] lg:h-[350px]">
+          <div className="relative lg:w-[420px] lg:h-[350px]">
             {/* Gradient Background Box (System View Only) */}
             <div 
               className="hidden md:block absolute top-[-25px] right-[-25px] w-full h-full rounded-lg"
