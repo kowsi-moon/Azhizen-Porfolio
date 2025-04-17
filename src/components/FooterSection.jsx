@@ -31,10 +31,10 @@ const FooterSection = () => {
   // Define links for each section to match desktop view
   const sectionLinks = {
     "Quick Links": [
-      { label: "Home", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Services", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Home", href: "/" },
+    { label: "About", href: "/about-us" },
+    { label: "Services", href: "/#services" },
+    { label: "Contact", href: "/contact-us" },
     ],
     Products: [
       { label: "Ease Milk", href: "#" },

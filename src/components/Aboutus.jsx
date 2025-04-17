@@ -49,7 +49,7 @@ const Aboutus = () => {
           <div className="md:hidden flex flex-col items-center gap-6 mt-10">
             <div className="w-full text-center">
               <p className="text-[#00B4D9] font-bold text-lg uppercase tracking-widest mb-3">
-                Economy | Efficiency | Effectiveness
+              Pioneer | Produce | Propel
               </p>
               <h1 className="text-2xl font-bold text-gray-900 mb-2">
                 About Our Company
