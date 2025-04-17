@@ -253,11 +253,13 @@ const FooterSection = () => {
           <p className="text-gray-400 mb-4">
             K.S.R College of Engineering Tiruchengode, Namakkal, Tamil Nadu
           </p>
-          <img
-            src={logofoot}
-            className="w-50 h-10 mb-4 rounded-lg mt-10 ml-10"
-            alt="Logo"
-          />
+          <div className="flex justify-center">
+      <img
+        src={logofoot}
+        className="w-40 h-10 mb-4 rounded-lg mt-10"
+        alt="Logo"
+      />
+    </div>
           <div className="flex justify-center space-x-4 mt-10">
             <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
               <img src={foot1} className="w-6 h-6" alt="Social 1" />
