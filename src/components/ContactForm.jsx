@@ -51,7 +51,7 @@ function ContactForm() {
       <div className="hidden md:block p-8 pt-16 mt-20">
         {/* Heading */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-poppins font-bold text-black">
+          <h1 className="text-5xl font-pooppins font-bold text-black">
             Contact our <span style={{ color: "#00B4D9" }}>Team</span>
           </h1>
           <p className="text-gray-500 mt-8">Any questions or remarks? Just leave a message!</p>
@@ -60,7 +60,7 @@ function ContactForm() {
         {/* Content */}
         <div className="flex flex-col md:flex-row justify-center items-start">
           {/* Form */}
-          <div className="md:w-2/3 p-4">
+          <div className="md:w-2/ p-4">
             <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
               {/* First & Last Name */}
               <div className="flex space-x-8">
@@ -178,7 +178,7 @@ function ContactForm() {
               <p className="text-gray-500 mt-2">Chat to us in person at our company</p>
               <li className="flex items-center">
                 <img src={icon5} className="mr-2 w-4 h-4" />
-                <a href="https://www.google.co.in/maps/place/Azhizen+Solutions+Pvt+Ltd.,/@11.3591653,77.8218212,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%" className="underline" >Tiruchengode, Namakkal</a>
+                <a href="https://www.google.co.in/maps/place/Azhizen+Solutions+Pvt+Ltd.,/@11.3591653,77.8218212,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%" className="underline">Tiruchengode, Namakkal</a>
               </li>
             </div>
           </div>
@@ -188,41 +188,41 @@ function ContactForm() {
       {/* MOBILE VIEW ONLY */}
       <div className="block md:hidden p-3 sm:p-4 bg-white rounded-lg shadow mt-30 w-full">
         <div className="max-w-sm sm:max-w-md mx-auto w-full">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black mb-4 sm:mb-6 text-center">
+          <h2 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-6 text-center">
             Contact Our <span style={{ color: "#00B4D9" }}>Team</span>
           </h2>
 
           <div className="space-y-3 sm:space-y-4">
             <div className="flex items-center justify-between w-full">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold">India</h3>
-              <img src={icon5} className="w-3 sm:w-4 h-3 sm:h-4 flex-shrink-0" alt="Location" />
+              <h3 className="text-sm sm:text-base font-semibold">India</h3>
+              <img src={icon5} className="w-3 sm:w-4 h-3 sm:h-4 flex-shrink-0 mr-10" alt="Location" />
             </div>
 
             <div className="break-words">
-              <p className="font-medium text-xs sm:text-sm md:text-base">CEO - Bharath Kumar R</p>
-              <p className="font-medium mt-2 sm:mt-3 text-xs sm:text-sm md:text-base">Namakkal</p>
-              <p className="text-gray-600 text-xs sm:text-sm md:text-base break-words">
+              <p className="font-medium text-xs sm:text-sm">CEO - Bharath Kumar R</p>
+              <p className="font-medium mt-2 sm:mt-3 text-xs sm:text-sm">Namakkal</p>
+              <p className="text-gray-600 text-xs sm:text-sm break-words">
                 K.S.R College of Engineering, Tiruchengode
               </p>
             </div>
 
-            <p className="font-semibold text-xs sm:text-sm md:text-base">
+            <p className="font-semibold text-xs sm:text-sm">
               Phone: <span className="text-gray-800 font-normal ml-1">+91 97506 03988</span>
             </p>
 
-            <p className="font-semibold text-xs sm:text-sm md:text-base">
+            <p className="font-semibold text-xs sm:text-sm">
               Email:{" "}
               <span>
                 <a
                   href="mailto:azhizensolutions@gmail.com"
                   className="text-blue-500 underline break-words"
                 >
-                  azhizensolutions@gmail.com
+                  azhestensolutions@gmail.com
                 </a>
               </span>
             </p>
 
-            <p className="font-semibold text-xs sm:text-sm md:text-base">
+            <p className="font-semibold text-xs sm:text-sm">
               Site:{" "}
               <span>
                 <a
