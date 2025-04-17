@@ -1,4 +1,5 @@
 import React from "react";
+import ceo from '../assets/ceo.jpeg';
 
 const Aboutus = () => {
   return (
@@ -83,18 +84,14 @@ const Aboutus = () => {
             <div className="md:w-1/2 flex justify-start">
               <div className="relative w-full max-w-sm lg:max-w-md">
                 <img
-                  src="/ceo.jpeg"
+                  src={ceo}
                   alt="CEO"
                   className="w-full rounded-[20px] h-80 lg:h-96 object-cover"
                 />
-                <div className="absolute top-24 left-28 bg-white shadow-md rounded-[10px] p-3 w-36 flex flex-col justify-center">
-                  <p className="text-sm text-center font-semibold text-gray-900">
-                    Mr. Bharath R
-                  </p>
-                  <p className="text-sm text-center font-medium text-[#00B4D9]">
-                    CEO - Azhizen
-                  </p>
-                </div>
+                <div className="absolute top-15 left-28 bg-white shadow-md rounded-[10px] p-3 w-36 flex flex-col justify-center ml-60">
+  <p className="text-sm text-center font-semibold text-gray-900">Mr. Bharath R</p>
+  <p className="text-sm text-center font-medium text-[#00B4D9]">CEO - Azhizen</p>
+</div>
               </div>
             </div>
             <div className="md:w-1/2">
