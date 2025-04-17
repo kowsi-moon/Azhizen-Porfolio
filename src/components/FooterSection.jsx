@@ -255,7 +255,7 @@ const FooterSection = () => {
           </p>
           <img
             src={logofoot}
-            className="w-full h-10 mb-4 rounded-lg mt-10 ml-2"
+            className="w-50 h-10 mb-4 rounded-lg mt-10 ml-10"
             alt="Logo"
           />
           <div className="flex justify-center space-x-4 mt-10">
