@@ -136,11 +136,11 @@ const Aboutus = () => {
             <div className="w-full flex justify-center">
               <div className="relative w-[250px] h-56">
                 <img
-                  src="/ceo.jpeg"
+                 src={ceo}
                   alt="CEO"
                   className="w-full h-full rounded-[6px] object-cover"
                 />
-                <div className="absolute top-16 left-32 bg-white shadow-md rounded-[10px] p-2 w-24 flex flex-col justify-center">
+                <div className="absolute top-16 left-32 bg-white shadow-md rounded-[10px] p-2 w-24 flex flex-col justify-center ml-20">
                   <p className="text-xs font-semibold text-gray-900">
                     Mr. Bharath R
                   </p>
