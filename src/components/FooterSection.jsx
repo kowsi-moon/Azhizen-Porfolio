@@ -32,9 +32,9 @@ const FooterSection = () => {
   const sectionLinks = {
     "Quick Links": [
       { label: "Home", href: "/" },
-    { label: "About", href: "/about-us" },
-    { label: "Services", href: "/#services" },
-    { label: "Contact", href: "/contact-us" },
+      { label: "About", href: "/about-us" },
+      { label: "Services", href: "/#services" },
+      { label: "Contact", href: "/contact-us" },
     ],
     Products: [
       { label: "Ease Milk", href: "#" },
@@ -97,7 +97,7 @@ const FooterSection = () => {
               </a>
             </li>
             <li>
-              <a href="about-us" className="hover:text-white">
+              <a href="/about-us" className="hover:text-white">
                 About
               </a>
             </li>
@@ -107,7 +107,7 @@ const FooterSection = () => {
               </a>
             </li>
             <li>
-              <a href="contact-us" className="hover:text-white">
+              <a href="/contact-us" className="hover:text-white">
                 Contact
               </a>
             </li>
@@ -142,17 +142,17 @@ const FooterSection = () => {
           <ul className="space-y-1 text-gray-400">
             <li>
               <a href="#" className="hover:text-white">
-              Research & Development
+                Research & Development
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-white">
-              Smart Hardware Solutions
+                Smart Hardware Solutions
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-white">
-              SoftEdge Innovations
+                SoftEdge Innovations
               </a>
             </li>
           </ul>
@@ -184,10 +184,10 @@ const FooterSection = () => {
         <div>
           <h4 className="text-lg font-semibold mb-3">Contact Us</h4>
           <p className="text-gray-400 mb-4">
- Email: azhizensolutions@gmail.com
-  <br />
-  Phone: +91 9750603988
-</p>
+            Email: azhizensolutions@gmail.com
+            <br />
+            Phone: +91 9750603988
+          </p>
           <button
             className="text-white px-6 py-3 rounded-full transition-all hover:brightness-110 w-[150px]"
             style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
@@ -230,13 +230,13 @@ const FooterSection = () => {
             </h4>
             <div className="border-b-2 border-white mb-3" />
             <ul
-              className={`space-y-1 text-gray-400 ${
+              className={`space-y-1 text-gray-300 dark:text-gray-200 ${
                 openSections[title] ? "block" : "hidden"
               }`}
             >
               {sectionLinks[title].map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="hover:text-white">
+                  <a href={link.href} className="hover:text-white dark:hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -254,12 +254,12 @@ const FooterSection = () => {
             K.S.R College of Engineering Tiruchengode, Namakkal, Tamil Nadu
           </p>
           <div className="flex justify-center">
-      <img
-        src={logofoot}
-        className="w-40 h-10 mb-4 rounded-lg mt-10"
-        alt="Logo"
-      />
-    </div>
+            <img
+              src={logofoot}
+              className="w-40 h-10 mb-4 rounded-lg mt-10"
+              alt="Logo"
+            />
+          </div>
           <div className="flex justify-center space-x-4 mt-10">
             <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
               <img src={foot1} className="w-6 h-6" alt="Social 1" />
