@@ -55,7 +55,7 @@ const FoundersSection = () => {
                 <img
                   src={founder.img}
                   alt={founder.alt}
-                  className="w-full h-150 object-cover"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
