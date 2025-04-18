@@ -63,7 +63,7 @@ const HeroSection = () => {
   return (
     <div className="bg-white w-full overflow-x-hidden">
       {/* Mobile View */}
-      <div className="block sm:hidden px-4 py-6 mt-4 text-center">
+      <div className="block sm:hidden px-4 py-6 mt-15 text-center">
         <div className="max-w-md mx-auto">
           <h1
             className="text-2xl font-bold text-black leading-tight mb-6"
