@@ -230,7 +230,7 @@ const FooterSection = () => {
             </h4>
             <div className="border-b-2 border-white mb-3" />
             <ul
-              className={`space-y-1 text-gray-300 dark:text-gray-200 ${
+              className={`space-y-1 text-white ${
                 openSections[title] ? "block" : "hidden"
               }`}
             >
