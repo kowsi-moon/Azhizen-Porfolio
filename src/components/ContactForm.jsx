@@ -178,7 +178,7 @@ function ContactForm() {
               <p className="text-gray-500 mt-2">Chat to us in person at our company</p>
               <li className="flex items-center">
                 <img src={icon5} className="mr-2 w-4 h-4" />
-                <a href="https://www.google.co.in/maps/place/Azhizen+Solutions+Pvt+Ltd.,/@11.3591653,77.8218212,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%" className="underline">Tiruchengode, Namakkal</a>
+                <a href="https://www.google.co.in/maps/place/Azhizen+Solutions+Pvt+Rounded corners and shadows.Ltd.,/@11.3591653,77.8218212,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%" className="underline">Tiruchengode, Namakkal</a>
               </li>
             </div>
           </div>
@@ -186,51 +186,57 @@ function ContactForm() {
       </div>
 
       {/* MOBILE VIEW ONLY - MODIFIED */}
-      <div className="block md:hidden p-4 sm:p-6 bg-white rounded-lg shadow mt-30 w-full">
+      <div className="block md:hidden p-4 xs:p-3 sm:p-5 bg-white rounded-lg shadow mt-30 w-full">
         <div className="max-w-md mx-auto w-full">
-          <h2 className="text-lg sm:text-xl font-bold text-black mb-6 text-center">
+          <h2 className="text-lg xs:text-base sm:text-xl font-bold text-black mb-6 text-center">
             Contact Our <span style={{ color: "#00B4D9" }}>Team</span>
           </h2>
 
           <div className="space-y-6">
-            {/* Location Info */}
-            <div>
-              <div className="flex items-center space-x-2">
-                <h3 className="text-sm sm:text-base font-semibold">India</h3>
-                <img src={icon5} className="w-4 h-4 flex-shrink-0 ml-50" alt="Location" />
+            {/* Contact Information */}
+            <div className="space-y-6">
+              {/* Location Info */}
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm xs:text-xs sm:text-base font-semibold">India</h3>
+                  <img src={icon5} className="w-4 h-4 flex-shrink-0" alt="Location" />
+                </div>
+                <div className="mt-3 space-y-2">
+                  <p className="font-medium text-xs sm:text-sm">CEO - Bharath Kumar R</p>
+                  <p className="font-medium text-xs sm:text-sm">Namakkal</p>
+                  <p className="text-gray-600 text-xs sm:text-sm break-words">
+                    K.S.R College of Engineering, Tiruchengode
+                  </p>
+                </div>
               </div>
-              <div className="mt-3 space-y-2">
-                <p className="font-medium text-xs sm:text-sm">CEO - Bharath Kumar R</p>
-                <p className="font-medium text-xs sm:text-sm">Namakkal</p>
-                <p className="text-gray-600 text-xs sm:text-sm break-words">
-                  K.S.R College of Engineering,<br /> Tiruchengode
+
+              {/* Contact Details */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <img src={icon6} className="w-4 h-4" alt="Phone Icon" />
+                  <p className="font-semibold text-xs sm:text-sm">
+                    Phone: <span className="font-normal underline">+91 9750603988</span>
+                  </p>
+                </div>
+                <p className="font-semibold text-xs sm:text-sm">
+                  Hours: <span className="font-normal">Mon - Fri, 8 AM to 6 PM</span>
+                </p>
+                <div className="flex items-center gap-2">
+                  <img src={icon2} className="w-4 h-4" alt="Email Icon" />
+                  <p className="font-semibold text-xs sm:text-sm">
+                    Email:{" "}
+                    <a href="mailto:azhizensolutions@gmail.com" className="font-normal underline break-words">
+                      azhizensolutions@gmail.com
+                    </a>
+                  </p>
+                </div>
+                <p className="font-semibold text-xs sm:text-sm">
+                  Site:{" "}
+                  <a href="https://www.azhizen.com" className="font-normal underline break-words">
+                    www.azhizen.com
+                  </a>
                 </p>
               </div>
-            </div>
-
-            {/* Contact Details */}
-            <div className="space-y-2">
-              <p className="font-semibold text-xs sm:text-sm">
-                Phone: <span className="text-gray-800 font-normal ml-1 underline">+91 9750603988</span>
-              </p>
-              <p className="font-semibold text-xs sm:text-sm">
-                Email:{" "}
-                <a
-                  href="mailto:azhizensolutions@gmail.com"
-                  className="text-blue-500 underline break-words"
-                >
-                  azhizensolutions@gmail.com
-                </a>
-              </p>
-              <p className="font-semibold text-xs sm:text-sm">
-                Site:{" "}
-                <a
-                  href="https://www.azhizen.com"
-                  className="text-blue-500 underline break-words"
-                >
-                  www.azhizen.com
-                </a>
-              </p>
             </div>
           </div>
         </div>
