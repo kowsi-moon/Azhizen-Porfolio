@@ -51,7 +51,7 @@ const FoundersSection = () => {
               key={index}
               className="text-center relative flex flex-col items-center justify-center"
             >
-              <div className="relative w-64 h-64 md:w-115 md:h-115 mx-auto rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="relative w-64 h-64 md:w-115 md:h-125 mx-auto rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
                   src={founder.img}
                   alt={founder.alt}
