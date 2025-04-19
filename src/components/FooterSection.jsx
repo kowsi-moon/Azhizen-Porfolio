@@ -248,9 +248,9 @@ const FooterSection = () => {
         {/* Contact Section */}
         <div className="text-left">
           <h4 className="text-lg font-semibold mb-3">Contact Us</h4>
-          <p className="text-white mb-1">azhizensolutions@gmail.com</p>
-          <p className="text-white mb-1">+91 97506 03988</p>
-          <p className="text-white mb-4">
+          <p className="text-white dark:text-white mb-1">azhizensolutions@gmail.com</p>
+          <p className="text-white dark:text-white mb-1">+91 97506 03988</p>
+          <p className="text-white dark:text-white mb-4">
             K.S.R College of Engineering Tiruchengode, Namakkal, Tamil Nadu
           </p>
           <div className="flex justify-center">
