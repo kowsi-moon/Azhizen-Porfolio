@@ -7,7 +7,7 @@
   font-weight: 400;
 
   color-scheme: light; /* Enforce light mode to prevent dark mode interference */
-  color: #213547; /* Default to dark text for consistency */
+  color: #ffffff; /* Default to dark text for consistency */
   background-color: #ffffff; /* Default to white background */
 
   font-synthesis: none;
