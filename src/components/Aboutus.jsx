@@ -47,8 +47,8 @@ const Aboutus = () => {
           </div>
 
           {/* Mobile View */}
-          <div className="md:hidden flex flex-col items-center gap-6 mt-10">
-            <div className="w-full text-center">
+          <div className="md:hidden flex flex-col items-center gap-0 mt-0 mb-0">
+          <div className="w-full text-center">
               <p className="text-[#00B4D9] font-bold text-lg uppercase tracking-widest mb-3">
               Pioneer | Produce | Propel
               </p>
@@ -116,7 +116,7 @@ const Aboutus = () => {
           </div>
 
           {/* Mobile View */}
-          <div className="md:hidden flex flex-col items-center gap-6">
+          <div className="md:hidden flex flex-col items-center gap-0 mt-0 mb-0">
             <div className="w-full text-center">
               <p className="text-[#00B4D9] text-lg uppercase tracking-widest font-bold mb-3">
                 OUR MISSION
@@ -187,7 +187,7 @@ const Aboutus = () => {
           </div>
 
           {/* Mobile View */}
-          <div className="md:hidden flex flex-col items-center gap-6">
+          <div className="md:hidden flex flex-col items-center gap-0 mt-0 mb-0">
             <div className="w-full text-center">
               <p className="text-[#00B4D9] text-lg uppercase tracking-widest font-bold mb-3">
                 OUR STORY
