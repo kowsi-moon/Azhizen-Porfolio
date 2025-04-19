@@ -6,8 +6,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light; /* Enforce light mode to prevent dark mode interference */
-  color: #ffffff; /* Default to dark text for consistency */
+  /* color-scheme: light; /* Enforce light mode to prevent dark mode interference 
+  color: #ffffff; Default to dark text for consistency */
   background-color: #ffffff; /* Default to white background */
 
   font-synthesis: none;
