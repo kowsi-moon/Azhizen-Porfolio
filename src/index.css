@@ -6,10 +6,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light; /* Enforce light mode to prevent dark mode interference 
-  color: #ffffff; Default to dark text for consistency */
-  background-color: #ffffff; /* Default to white background */
-
+  /* Removed hardcoded color and background */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,93 +19,56 @@ body {
   box-sizing: border-box;
 }
 
-/* Ensure consistent text colors for ContactForm */
+/* Utility override (use with caution – Tailwind already provides these) */
 .bg-white {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .text-black {
-    color: #000000;
+  color: #000000;
 }
 
 .text-gray-700 {
-    color: #4a5568; /* Fixed typo: removed 'coach' */
+  color: #4a5568;
 }
 
 .text-gray-500 {
-    color: #6b7280;
+  color: #6b7280;
 }
 
 .text-gray-600 {
-    color: #4b5563;
+  color: #4b5563;
 }
 
 h1, h2, h3 {
-    color: #000000;
+  color: #000000;
 }
 
 input, textarea, select {
-    color: #000000;
-    background-color: #ffffff;
-    border-color: #000000;
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #000000;
 }
 
 button {
-    color: #ffffff;
+  color: #ffffff;
+  background-color: #1f2937; /* Optional */
 }
 
-/* Prevent dark mode overrides */
-@media (prefers-color-scheme: dark) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    .bg-white {
-        background-color: #ffffff;
-        color: #000000;
-    }
-    h1, h2, h3, p, label, input, textarea, select, a, span {
-        color: #000000; /* Explicitly set black text */
-    }
-    .text-black {
-        color: #000000;
-    }
-    .text-gray-500 {
-        color: #6b7280;
-    }
-    .text-gray-600 {
-        color: #4b5563;
-    }
-    .text-gray-700 {
-        color: #4a5568;
-    }
-}
+/* ❌ Removed prefers-color-scheme overrides – Tailwind handles this via `dark:` classes */
 
-/* Swiper styles (unchanged) */
+/* Swiper styles */
 .swiper-slide {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .swiper-slide:not(.swiper-slide-active) {
-    filter: blur(2px);
-    opacity: 0.7;
+  filter: blur(2px);
+  opacity: 0.7;
 }
 
 .swiper-slide-active {
-    filter: none;
-    opacity: 1;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
+  filter: none;
+  opacity: 1;
 }
