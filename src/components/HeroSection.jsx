@@ -117,13 +117,14 @@ const HeroSection = () => {
           </div>
         </div>
         <div
-          className="absolute right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-full bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0"
-          style={{
-            borderRadius: '591.69px 0 0 591.69px',
-            top: '-20%',
-            overflow: 'hidden',
-          }}
-        ></div>
+  className="absolute right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-[300px] sm:h-[350px] lg:h-[500px] 2xl:h-[600px] bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0"
+  style={{
+    borderRadius: '591.69px 0 0 591.69px',
+    top: '10%',
+    overflow: 'hidden',
+  }}
+></div>
+
       </div>
     </div>
   );
