@@ -47,7 +47,7 @@ function ContactForm() {
 
   return (
     <div className="bg-white">
-      {/* SYSTEM VIEW ONLY - UNCHANGED */}
+      {/* SYSTEM VIEW */}
       <div className="hidden md:block p-8 pt-16 mt-20">
         {/* Heading */}
         <div className="text-center mb-8">
@@ -184,59 +184,93 @@ function ContactForm() {
           </div>
         </div>
       </div>
-
-      {/* MOBILE VIEW - FIXED */}
+      {/* MOBILE VIEW - FORM ONLY */}
       <div className="block md:hidden p-4 xs:p-4 sm:p-6 bg-white rounded-lg shadow mt-30 w-full overflow-visible mx-auto">
         <div className="max-w-sm mx-auto w-full px-2">
           <h2 className="text-lg xs:text-base sm:text-xl font-bold text-black mb-6 text-center">
             Contact Our <span style={{ color: "#00B4D9" }}>Team</span>
           </h2>
 
-          <div className="space-y-6">
-            {/* Contact Information */}
-            <div className="space-y-6">
-              {/* Location Info */}
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-sm xs:text-sm sm:text-base font-semibold text-black">India</h3>
-                  <img src={icon5} className="w-4 h-4 flex-shrink-0" alt="Location" />
-                </div>
-                <div className="mt-3 space-y-2">
-                  <p className="font-medium text-xs xs:text-xs sm:text-sm text-black">CEO - Bharath Kumar R</p>
-                  <p className="font-medium text-xs xs:text-xs sm:text-sm text-black">Namakkal</p>
-                  <p className="text-gray-600 text-xs xs:text-xs sm:text-sm break-words text-black">
-                    K.S.R College of Engineering, Tiruchengode
-                  </p>
-                </div>
+          <form className="space-y-3" onSubmit={handleSubmit}>
+            {/* First & Last Name */}
+            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
+              <div className="w-full sm:w-1/2">
+                <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                />
               </div>
-
-              {/* Contact Details */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <p className="font-semibold text-xs xs:text-xs sm:text-sm text-black">
-                    Phone: <span className="font-normal underline text-black">+91 9750603988</span>
-                  </p>
-                </div>
-                <p className="font-semibold text-xs xs:text-xs sm:text-sm text-black">
-                  Hours: <span className="font-normal text-black">Mon - Fri, 8 AM to 6 PM</span>
-                </p>
-                <div className="flex items-center gap-2">
-                  <p className="font-semibold text-xs xs:text-xs sm:text-sm text-black">
-                    Email:{" "}
-                    <a href="mailto:azhizensolutions@gmail.com" className="font-normal underline text-black break-words">
-                      azhizensolutions@gmail.com
-                    </a>
-                  </p>
-                </div>
-                <p className="font-semibold text-xs xs:text-xs sm:text-sm text-black">
-                  Site:{" "}
-                  <a href="https://www.azhizen.com" className="font-normal underline text-black break-words">
-                    www.azhizen.com
-                  </a>
-                </p>
+              <div className="w-full sm:w-1/2">
+                <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                />
               </div>
             </div>
-          </div>
+
+            {/* Email */}
+            <div>
+              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+              />
+            </div>
+
+            {/* Country & Phone */}
+            <div className="w-full">
+              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Country & Phone Number</label>
+              <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
+                <div className="w-full sm:w-1/4">
+                  <select className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm">
+                    <option>IND</option>
+                  </select>
+                </div>
+                <div className="w-full sm:w-3/4">
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                    placeholder="Phone Number"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Leave a message"
+                className="w-full p-1.5 border border-gray-900 rounded h-24 text-xs sm:text-sm"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full p-1.5 text-white rounded text-xs sm:text-sm"
+              style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>
