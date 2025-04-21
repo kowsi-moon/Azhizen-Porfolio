@@ -9,21 +9,21 @@ import founder2 from "../assets/founder2.png";
 import founder3 from "../assets/founder3.png";
 
 const founders = [
-  { id: 1, name: "Founder 1", img: founder1, alt: "Founder 1 portrait" },
-  { id: 2, name: "Founder 2", img: founder2, alt: "Founder 2 portrait" },
-  { id: 3, name: "Founder 3", img: founder3, alt: "Founder 3 portrait" },
+  { id: 1, name: "Bharath R", img: founder1, alt: "Bharath R portrait" },
+  { id: 2, name: "Jeevitha", img: founder2, alt: "Jeevitha portrait" },
+  { id: 3, name: "Nishanth", img: founder3, alt: "Nishanth portrait" },
 ];
 
 const FoundersSection = () => {
   return (
-    <section className="py-16 bg-gray-50 min-h-[400px]">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 tracking-tight">
-        <span style={{ color: "#00B4D9" }}>O</span>UR &nbsp;
-        <span style={{ color: "#00B4D9" }}>F</span>OUNDER'S &nbsp;
+    <section className="py-16 sm:py-20 lg:py-24 2xl:py-32 bg-gray-50 min-h-[400px] 2xl:min-h-[600px]">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 2xl:px-16 max-w-7xl 2xl:max-w-[1920px]">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 lg:mb-20 2xl:mb-24 tracking-tight">
+          <span style={{ color: "#00B4D9" }}>O</span>UR 
+          <span style={{ color: "#00B4D9" }}>F</span>OUNDER'S 
         </h2>
 
-        {/* Swiper for Mobile & Desktop with Infinite Loop */}
+        {/* Swiper for Mobile, Desktop, and 4K with Infinite Loop */}
         <Swiper
           effect="coverflow"
           grabCursor={true}
@@ -31,7 +31,8 @@ const FoundersSection = () => {
           slidesPerView={1.2} // Default for mobile
           breakpoints={{
             640: { slidesPerView: 2.5 }, // Tablet
-            1024: { slidesPerView: 3}, // Desktop
+            1024: { slidesPerView: 3 }, // Desktop
+            1536: { slidesPerView: 3.5 }, // 4K
           }}
           spaceBetween={-20}
           loop={true} // Enables infinite loop
@@ -44,22 +45,22 @@ const FoundersSection = () => {
             slideShadows: false,
           }}
           modules={[EffectCoverflow]}
-          className="w-full pb-8"
+          className="w-full pb-8 2xl:pb-12"
         >
-          {[...founders, ...founders].map((founder, index) => ( // Duplicating slides for a seamless loop
+          {[...founders, ...founders].map((founder, index) => (
             <SwiperSlide
               key={index}
               className="text-center relative flex flex-col items-center justify-center"
             >
-              <div className="relative w-64 h-64 md:w-115 md:h-125 mx-auto rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="relative w-64 h-64 md:w-[460px] md:h-[500px] 2xl:w-[600px] 2xl:h-[652px] mx-auto rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
                   src={founder.img}
                   alt={founder.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover translate-y-4"
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mt-4">
+              <h3 className="text-xl sm:text-2xl 2xl:text-3xl font-semibold text-gray-800 mt-4 2xl:mt-6">
                 {founder.name}
               </h3>
             </SwiperSlide>

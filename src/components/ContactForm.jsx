@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import icon1 from '../assets/icon1.png';
 import icon2 from '../assets/icon2.png';
 import icon3 from '../assets/icon3.png';
@@ -6,7 +7,6 @@ import icon5 from '../assets/icon5.png';
 import icon6 from '../assets/icon6.png';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import React, { useState } from 'react';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -47,63 +47,68 @@ function ContactForm() {
 
   return (
     <div className="bg-white">
-      {/* SYSTEM VIEW */}
-      <div className="hidden md:block p-8 pt-16 mt-20">
+      {/* SYSTEM VIEW (Desktop) */}
+      <div className="hidden md:block p-8 lg:p-12 2xl:p-16 pt-16 2xl:pt-20 mt-20 2xl:mt-24 max-w-7xl 2xl:max-w-[1920px] mx-auto">
         {/* Heading */}
-        <div className="text-center mb-8">
-          <h1 className="text-5xl font-pooppins font-bold text-black">
+        <div className="text-center mb-8 2xl:mb-12">
+          <h1 className="text-5xl lg:text-6xl 2xl:text-7xl font-poppins font-bold text-black">
             Contact our <span style={{ color: "#00B4D9" }}>Team</span>
           </h1>
-          <p className="text-gray-500 mt-8">Any questions or remarks? Just leave a message!</p>
+          <p className="text-gray-500 mt-8 2xl:mt-10 text-base lg:text-lg 2xl:text-xl">
+            Any questions or remarks? Just leave a message!
+          </p>
         </div>
 
         {/* Content */}
         <div className="flex flex-col md:flex-row justify-center items-start">
           {/* Form */}
           <div className="md:w-2/ p-4">
-            <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
+            <form className="mt-4 space-y-3 2xl:space-y-5" onSubmit={handleSubmit}>
               {/* First & Last Name */}
               <div className="flex space-x-8">
                 <div className="w-1/2">
-                  <label className="block text-gray-700 text-sm mb-2 font-bold">First Name</label>
+                  <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">First Name</label>
                   <input
                     type="text"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full p-1.5 border border-gray-900 rounded text-sm"
+                    className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                    required
                   />
                 </div>
                 <div className="w-1/2">
-                  <label className="block text-gray-700 text-sm mb-2 font-bold">Last Name</label>
+                  <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full p-1.5 border border-gray-900 rounded text-sm"
+                    className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                    required
                   />
                 </div>
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-gray-700 text-sm mb-2 font-bold">Email</label>
+                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-1.5 border border-gray-900 rounded text-sm"
+                  className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                  required
                 />
               </div>
 
               {/* Country & Phone */}
               <div className="w-full">
-                <label className="block text-gray-700 text-sm mb-2 font-bold">Country & Phone Number</label>
+                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Country & Phone Number</label>
                 <div className="flex space-x-3">
                   <div className="w-1/4">
-                    <select className="w-full p-1.5 border border-gray-900 rounded text-sm">
+                    <select className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg">
                       <option>IND</option>
                     </select>
                   </div>
@@ -113,7 +118,7 @@ function ContactForm() {
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleChange}
-                      className="w-full p-1.5 border border-gray-900 rounded text-sm"
+                      className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
                       placeholder="Phone Number"
                     />
                   </div>
@@ -122,21 +127,23 @@ function ContactForm() {
 
               {/* Message */}
               <div>
-                <label className="block text-gray-700 text-sm mb-2 font-bold">Message</label>
+                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Leave a message"
-                  className="w-full p-1.5 border border-gray-900 rounded h-24 text-sm"
+                  className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded h-24 2xl:h-32 text-sm lg:text-base 2xl:text-lg"
+                  required
                 ></textarea>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full p-1.5 text-white rounded text-sm"
+                className="w-full p-1.5 lg:p-2 2xl:p-2.5 text-white rounded text-sm lg:text-base 2xl:text-lg"
                 style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
+                aria-label="Send message"
               >
                 Send Message
               </button>
@@ -146,52 +153,66 @@ function ContactForm() {
           {/* Contact Info */}
           <div className="ml-20 flex justify-end p-4">
             <div className="md:w-full">
-              <h2 className="text-xl font-semibold">Chat with us</h2>
-              <p className="text-gray-500 mt-2">Speak to our friendly team via live chat</p>
-              <ul className="mt-4 space-y-2">
+              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Chat with us</h2>
+              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
+                Speak to our friendly team via live chat
+              </p>
+              <ul className="mt-4 2xl:mt-6 space-y-2 2xl:space-y-3">
                 <li className="flex items-center">
-                  <img src={icon1} alt="Chat Icon" className="mr-2 w-4 h-4" />
-                  <span className="underline">Start a live chat</span>
+                  <img src={icon1} alt="Chat Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                  <span className="underline text-sm lg:text-base 2xl:text-lg">Start a live chat</span>
                 </li>
                 <li className="flex items-center">
-                  <img src={icon2} alt="Email Icon" className="mr-2 w-4 h-4" />
-                  <a href="mailto:azhizensolutions@gmail.com" className="underline">Shoot us on Email</a>
+                  <img src={icon2} alt="Email Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                  <a href="mailto:azhizensolutions@gmail.com" className="underline text-sm lg:text-base 2xl:text-lg">Shoot us on Email</a>
                 </li>
                 <li className="flex items-center">
-                  <img src={icon3} alt="LinkedIn Icon" className="mr-2 w-4 h-4" />
-                  <a href="https://www.linkedin.com/company/azhizensolutions/" target="_blank" rel="noopener noreferrer" className="underline">Message us on Linkedin</a>
+                  <img src={icon3} alt="LinkedIn Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                  <a href="https://www.linkedin.com/company/azhizensolutions/" target="_blank" rel="noopener noreferrer" className="underline text-sm lg:text-base 2xl:text-lg">Message us on LinkedIn</a>
                 </li>
                 <li className="flex items-center">
-                  <img src={icon4} alt="Instagram Icon" className="mr-2 w-4 h-4" />
-                  <a href="https://www.instagram.com/azhizensolutions" target="_blank" rel="noopener noreferrer" className="underline">Message us on Instagram</a>
+                  <img src={icon4} alt="Instagram Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                  <a href="https://www.instagram.com/azhizensolutions" target="_blank" rel="noopener noreferrer" className="underline text-sm lg:text-base 2xl:text-lg">Message us on Instagram</a>
                 </li>
               </ul>
 
-              <h2 className="text-xl font-semibold mt-6">Call us</h2>
-              <p className="text-gray-500 mt-2">Call our team Mon - Fri from 8 Am to 6 Pm</p>
-              <li className="flex items-center">
-                <img src={icon6} className="mr-2 w-4 h-4" />
-                <span className="underline">+91 9750603988</span>
+              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold mt-6 2xl:mt-8">Call us</h2>
+              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
+                Call our team Mon - Fri from 8 AM to 6 PM
+              </p>
+              <li className="flex items-center mt-2 2xl:mt-3">
+                <img src={icon6} alt="Phone Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                <a href="tel:+919750603988" className="underline text-sm lg:text-base 2xl:text-lg">+91 9750603988</a>
               </li>
 
-              <h2 className="text-xl font-semibold mt-6">Visit us</h2>
-              <p className="text-gray-500 mt-2">Chat to us in person at our company</p>
-              <li className="flex items-center">
-                <img src={icon5} className="mr-2 w-4 h-4" />
-                <a href="https://www.google.co.in/maps/place/Azhizen+Solutions+Pvt+Rounded corners and shadows.Ltd.,/@11.3591653,77.8218212,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%" className="underline">Tiruchengode, Namakkal</a>
+              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold mt-6 2xl:mt-8">Visit us</h2>
+              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
+                Chat to us in person at our company
+              </p>
+              <li className="flex items-center mt-2 2xl:mt-3">
+                <img src={icon5} alt="Location Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                <a
+                  href="https://maps.app.goo.gl/8jZxYJqYJqYJqYJqY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-sm lg:text-base 2xl:text-lg"
+                >
+                  Tiruchengode, Namakkal
+                </a>
               </li>
             </div>
           </div>
         </div>
       </div>
+
       {/* MOBILE VIEW - FORM ONLY */}
-      <div className="block md:hidden p-4 xs:p-4 sm:p-6 bg-white rounded-lg shadow mt-30 w-full overflow-visible mx-auto">
-        <div className="max-w-sm mx-auto w-full px-2">
-          <h2 className="text-lg xs:text-base sm:text-xl font-bold text-black mb-6 text-center">
+      <div className="block md:hidden p-4 xs:p-4 sm:p-6 bg-white rounded-lg shadow mt-30 sm:mt-32 w-full overflow-visible mx-auto max-w-sm sm:max-w-md">
+        <div className="max-w-sm sm:max-w-md mx-auto w-full px-2">
+          <h2 className="text-lg xs:text-base sm:text-xl font-bold text-black mb-6 sm:mb-8 text-center">
             Contact Our <span style={{ color: "#00B4D9" }}>Team</span>
           </h2>
 
-          <form className="space-y-3" onSubmit={handleSubmit}>
+          <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
             {/* First & Last Name */}
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
               <div className="w-full sm:w-1/2">
@@ -201,7 +222,8 @@ function ContactForm() {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                  className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
+                  required
                 />
               </div>
               <div className="w-full sm:w-1/2">
@@ -211,7 +233,8 @@ function ContactForm() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                  className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
+                  required
                 />
               </div>
             </div>
@@ -224,7 +247,8 @@ function ContactForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
+                required
               />
             </div>
 
@@ -233,7 +257,7 @@ function ContactForm() {
               <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Country & Phone Number</label>
               <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
                 <div className="w-full sm:w-1/4">
-                  <select className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm">
+                  <select className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm">
                     <option>IND</option>
                   </select>
                 </div>
@@ -243,7 +267,7 @@ function ContactForm() {
                     name="phoneNumber"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full p-1.5 border border-gray-900 rounded text-xs sm:text-sm"
+                    className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -258,15 +282,17 @@ function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Leave a message"
-                className="w-full p-1.5 border border-gray-900 rounded h-24 text-xs sm:text-sm"
+                className="w-full p-1.5 sm:p-2 border border-gray-900 rounded h-24 sm:h-28 text-xs sm:text-sm"
+                required
               ></textarea>
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full p-1.5 text-white rounded text-xs sm:text-sm"
+              className="w-full p-1.5 sm:p-2 text-white rounded text-xs sm:text-sm"
               style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
+              aria-label="Send message"
             >
               Send Message
             </button>
