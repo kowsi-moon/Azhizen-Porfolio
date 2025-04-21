@@ -56,7 +56,11 @@ const FooterSection = () => {
       <div className="hidden md:grid grid-cols-6 gap-6 lg:gap-8 2xl:gap-12 text-left text-sm 2xl:text-base mb-10 2xl:mb-16 max-w-7xl 2xl:max-w-[1920px] mx-auto">
         {/* Logo and Description */}
         <div>
-          <img src={logofoot} className="w-full h-10 2xl:h-14 mb-4 2xl:mb-6 rounded-lg mt-1" alt="Azhizen Logo" />
+        <img
+  src={logofoot}
+  className="w-full h-10 2xl:h-14 mb-4 2xl:mb-6 rounded-lg mt-1 -ml-2"
+  alt="Azhizen Logo"
+/>
           <p className="text-gray-400 text-sm 2xl:text-base">
             3rd Floor, Mercury Block <br />KSRCE, Tiruchengode, Namakkal, Tamil Nadu
           </p>
@@ -116,17 +120,17 @@ const FooterSection = () => {
           <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Products</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Ease Milk
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Soil Tester
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Milk Tester
               </a>
             </li>
@@ -138,17 +142,17 @@ const FooterSection = () => {
           <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Services</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Research & Development
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Smart Hardware Solutions
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 SoftEdge Innovations
               </a>
             </li>
@@ -160,17 +164,17 @@ const FooterSection = () => {
           <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Policies</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Refund Policy
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white">
+              <a className="hover:text-white">
                 Terms & Conditions
               </a>
             </li>
@@ -181,7 +185,7 @@ const FooterSection = () => {
         <div>
           <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Contact Us</h4>
           <p className="text-gray-400 mb-4 text-sm 2xl:text-base">
-            Email: azhizensolutions@gmail.com
+            azhizensolutions@gmail.com
             <br />
             Phone: +91 9750603988
           </p>

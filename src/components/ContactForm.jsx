@@ -158,10 +158,13 @@ function ContactForm() {
                 Speak to our friendly team via live chat
               </p>
               <ul className="mt-4 2xl:mt-6 space-y-2 2xl:space-y-3">
-                <li className="flex items-center">
-                  <img src={icon1} alt="Chat Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                  <span className="underline text-sm lg:text-base 2xl:text-lg">Start a live chat</span>
-                </li>
+                {/*
+<li className="flex items-center">
+  <img src={icon1} alt="Chat Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+  <span className="underline text-sm lg:text-base 2xl:text-lg">Start a live chat</span>
+</li>
+*/}
+
                 <li className="flex items-center">
                   <img src={icon2} alt="Email Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
                   <a href="mailto:azhizensolutions@gmail.com" className="underline text-sm lg:text-base 2xl:text-lg">Shoot us on Email</a>
@@ -192,7 +195,7 @@ function ContactForm() {
               <li className="flex items-center mt-2 2xl:mt-3">
                 <img src={icon5} alt="Location Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
                 <a
-                  href="https://maps.app.goo.gl/8jZxYJqYJqYJqYJqY"
+                  href="https://www.google.com/maps/place/Azhizen+Solutions+Pvt+Ltd.,/@11.3591653,77.8266921,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline text-sm lg:text-base 2xl:text-lg"

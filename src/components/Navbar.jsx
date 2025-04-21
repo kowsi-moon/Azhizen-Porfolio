@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import logo from "../assets/logo.jpg"; // Adjust the path accordingly
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(""); // Track the active tab
   const navigate = useNavigate();
+  const location = useLocation(); // Get the current path from useLocation
+  const currentPath = location.pathname; // Extract the path to determine the active tab
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const handleNavigation = (path) => {
-    setActiveTab(path); // Set the active tab
     navigate(path);
   };
 
@@ -41,7 +41,7 @@ const Navbar = () => {
             <div
               key={name}
               className={`text-base md:text-lg 2xl:text-xl cursor-pointer transition-colors duration-200 ${
-                activeTab === path
+                currentPath === path
                   ? "font-bold text-[#00B4D9]"
                   : "text-gray-600 font-normal hover:text-[#00B4D9]"
               }`}
@@ -99,7 +99,7 @@ const Navbar = () => {
               <div
                 key={name}
                 className={`cursor-pointer text-base ${
-                  activeTab === path
+                  currentPath === path
                     ? "font-bold text-[#00B4D9]"
                     : "text-gray-600 font-normal hover:text-[#00B4D9]"
                 }`}
