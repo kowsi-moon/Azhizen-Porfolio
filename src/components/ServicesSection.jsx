@@ -19,8 +19,8 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="relative bg-white w-full overflow-x-hidden">
-      <div className="md:bg-[#00B4D9] md:absolute md:inset-0 md:h-full md:w-[100vw]"></div>
+<section className="relative bg-white w-full overflow-x-hidden mt-0 md:mt-0 lg:mt-16 xl:mt-20">
+<div className="md:bg-[#00B4D9] md:absolute md:inset-0 md:h-full md:w-[100vw]"></div>
       <div className="relative w-full px-4 sm:px-6 lg:px-8 2xl:px-12 py-8 sm:py-12 lg:py-16 2xl:py-20 max-w-7xl 2xl:max-w-[1920px] mx-auto">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-black md:text-white text-center mb-8 sm:mb-12 lg:mb-16 2xl:mb-20">
           SERVICES WE PROVIDE

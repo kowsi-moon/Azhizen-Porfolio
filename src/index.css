@@ -72,3 +72,29 @@ button {
   filter: none;
   opacity: 1;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ipad-half-circle {
+    height: 200px !important; /* Adjust based on desired size */
+    border-top-left-radius: 200px !important;
+    border-bottom-left-radius: 200px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ipad-half-circle {
+    top: 50px !important; /* Adjust this value to control how far down it moves */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ipad-tight-spacing {
+    margin-top: -40px !important; /* Reduce spacing between sections */
+  }
+}
+
+
+
