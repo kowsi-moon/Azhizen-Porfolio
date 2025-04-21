@@ -56,12 +56,12 @@ const FooterSection = () => {
       <div className="hidden md:grid grid-cols-6 gap-6 lg:gap-8 2xl:gap-12 text-left text-sm 2xl:text-base mb-10 2xl:mb-16 max-w-7xl 2xl:max-w-[1920px] mx-auto">
         {/* Logo and Description */}
         <div>
-        <img
-  src={logofoot}
-  className="w-full h-10 2xl:h-14 mb-4 2xl:mb-6 rounded-lg mt-1 -ml-2"
-  alt="Azhizen Logo"
-/>
-          <p className="text-gray-400 text-sm 2xl:text-base">
+          <img
+            src={logofoot}
+            className="w-full h-10 2xl:h-14 mb-4 2xl:mb-6 rounded-lg mt-1 -ml-2"
+            alt="Azhizen Logo"
+          />
+          <p className="text-gray-400 text-sm md:text-xs 2xl:text-base">
             3rd Floor, Mercury Block <br />KSRCE, Tiruchengode, Namakkal, Tamil Nadu
           </p>
           <div className="flex justify-center space-x-4 2xl:space-x-6 mt-10 2xl:mt-12 mr-10">
@@ -90,7 +90,7 @@ const FooterSection = () => {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Quick Links</h4>
+          <h4 className="text-lg md:text-base 2xl:text-xl font-semibold mb-3 2xl:mb-4">Quick Links</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
               <a href="/" className="hover:text-white">
@@ -117,7 +117,7 @@ const FooterSection = () => {
 
         {/* Products */}
         <div>
-          <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Products</h4>
+          <h4 className="text-lg md:text-base 2xl:text-xl font-semibold mb-3 2xl:mb-4">Products</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
               <a className="hover:text-white">
@@ -139,7 +139,7 @@ const FooterSection = () => {
 
         {/* Services */}
         <div>
-          <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Services</h4>
+          <h4 className="text-lg md:text-base 2xl:text-xl font-semibold mb-3 2xl:mb-4">Services</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
               <a className="hover:text-white">
@@ -161,7 +161,7 @@ const FooterSection = () => {
 
         {/* Policies */}
         <div>
-          <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Policies</h4>
+          <h4 className="text-lg md:text-base 2xl:text-xl font-semibold mb-3 2xl:mb-4">Policies</h4>
           <ul className="space-y-1 2xl:space-y-2 text-gray-400">
             <li>
               <a className="hover:text-white">
@@ -182,22 +182,22 @@ const FooterSection = () => {
         </div>
 
         {/* Contact Us */}
-        <div>
-          <h4 className="text-lg 2xl:text-xl font-semibold mb-3 2xl:mb-4">Contact Us</h4>
-          <p className="text-gray-400 mb-4 text-sm 2xl:text-base">
-            azhizensolutions@gmail.com
-            <br />
-            Phone: +91 9750603988
-          </p>
-          <button
-            className="text-white px-6 2xl:px-8 py-3 2xl:py-4 rounded-full transition-all hover:brightness-110 w-[150px] 2xl:w-[180px] text-sm 2xl:text-base"
-            style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
-            onClick={handleContactClick}
-            aria-label="Contact us"
-          >
-            Contact us
-          </button>
-        </div>
+        <div className="md:text-left">
+  <h4 className="text-lg md:text-base 2xl:text-xl font-semibold mb-3 2xl:mb-4">Contact Us</h4>
+  <p className="text-gray-400 mb-4 text-sm md:text-xs 2xl:text-base">
+    azhizensolutions@gmail.com
+    <br />
+    Phone: +91 9750603988
+  </p>
+  <button
+    className="text-white px-6 2xl:px-8 py-3 2xl:py-4 rounded-full transition-all hover:brightness-110 w-[150px] 2xl:w-[180px] text-sm md:text-xs 2xl:text-base"
+    style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
+    onClick={handleContactClick}
+    aria-label="Contact us"
+  >
+    Contact us
+  </button>
+</div>
       </div>
 
       {/* Mobile View */}
@@ -291,7 +291,7 @@ const FooterSection = () => {
       <div className="w-screen px-0 mx-[-1.5rem] sm:mx-[-2rem] lg:mx-[-3rem] 2xl:mx-[-4rem] mt-10 sm:mt-12 2xl:mt-16">
         <hr className="border-t border-white" />
       </div>
-      <div className="text-center text-gray-500 mt-4 sm:mt-6 text-sm 2xl:text-base">
+      <div className="text-center text-gray-500 mt-4 sm:mt-6 text-sm md:text-xs 2xl:text-base">
         © 2025 Azhizen Solution. All Rights Reserved.
       </div>
     </footer>
