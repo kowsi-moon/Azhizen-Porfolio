@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
 import AboutUsSection from '../components/AboutUsSection';
 import FoundersSection from '../components/FoundersSection';
+import CommunityPartner from '../components/CommunityPartner';
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
         </section>
         <AboutUsSection />
         <FoundersSection />
+        <CommunityPartner/>
       </div>
     </div>
   );
