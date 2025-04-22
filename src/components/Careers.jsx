@@ -45,9 +45,9 @@ export default function Careers() {
       </div>
 
       {/* Benefits Section */}
-      <div className="flex flex-col md:flex-row px-4 md:px-[317px] py-[40px] bg-gray-50 gap-15">
+      {/* <div className="flex flex-col md:flex-row px-4 md:px-[317px] py-[40px] bg-gray-50 gap-15"> */}
         {/* Left Side: Heading and Description */}
-        <div className="flex-1 hidden md:block">
+        {/* <div className="flex-1 hidden md:block">
           <h3 className="text-black font-poppins text-[40px] md:text-[50px] font-medium leading-normal">
             Wellness & Benefits
           </h3>
@@ -55,10 +55,10 @@ export default function Careers() {
             As part of our pursuit to lead impactful, fulfilling lives, we take
             benefits pretty seriously.
           </p>
-        </div>
+        </div> */}
 
         {/* Right Side: Accordion Section */}
-        <div className="flex-1 w-full max-w-2xl mt-6 md:mt-0 space-y-4 hidden md:block">
+        {/* <div className="flex-1 w-full max-w-2xl mt-6 md:mt-0 space-y-4 hidden md:block">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -87,7 +87,7 @@ export default function Careers() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <Jobs />
     </div>

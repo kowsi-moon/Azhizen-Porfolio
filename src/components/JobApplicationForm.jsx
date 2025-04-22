@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import profile from '../assets/Profile1.png';
+import { useLocation } from 'react-router-dom'; 
+import jobListings from './jobs.json'; // Assuming jobs.json is in the same directory
 
 const JobApplicationForm = () => {
+  const location = useLocation();  // Get location object
+  const { job } = location.state || {};  // Get job object from the location state
+
+  // If job is undefined, you can handle the error gracefully
+  if (!job) return <div>No job information available.</div>;
+
+  console.log(job);
+
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
   const [resumeFile, setResumeFile] = useState(null);
@@ -50,7 +60,7 @@ const JobApplicationForm = () => {
     <div className="min-h-screen flex items-center justify-center px-2 sm:px-4 mt-35">
       <div className="w-full max-w-5xl bg-white p-4 sm:p-6 lg:p-12">
         <h1 className="text-xl sm:text-2xl md:text-4xl font-medium font-poppins text-black mb-6">
-          Senior Product Designer 3 month Contract
+          {job.title} {/* Dynamically display the selected job title */}
         </h1>
 
         {/* Personal Info */}
@@ -76,7 +86,6 @@ const JobApplicationForm = () => {
                 />
               </div>
             ))}
-
            {/* Phone Number Section */}
            <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Phone number*</label>
