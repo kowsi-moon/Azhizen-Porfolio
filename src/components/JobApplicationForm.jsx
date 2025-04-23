@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import profile from '../assets/Profile1.png';
 import { useLocation } from 'react-router-dom'; 
-import jobListings from './jobs.json'; // Assuming jobs.json is in the same directory
+import jobListings from '../assets/jobs.json'; // Assuming jobs.json is in the same directory
 
 const JobApplicationForm = () => {
   const location = useLocation();  // Get location object
