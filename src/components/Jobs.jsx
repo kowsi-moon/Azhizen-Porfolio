@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import JobPosting from "./JobPosting"; // Update path as necessary
+import JobPosting from "./Jobposting.jsx"; // Update path as necessary
 
 const Jobs = () => {
   const [jobListings, setJobListings] = useState([]);
