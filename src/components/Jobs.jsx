@@ -7,7 +7,7 @@ const Jobs = () => {
   useEffect(() => {
     // Fetch job listings from the JSON file
     const fetchJobListings = async () => {
-      const response = await fetch("/src/components/jobs.json");
+      const response = await fetch("/jobs.json");
       const data = await response.json();
       setJobListings(data);
     };
