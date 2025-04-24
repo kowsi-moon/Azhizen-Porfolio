@@ -1,23 +1,25 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCa0HjcMKefUvwo2GoQIqxS0LKWEgizSkQ",
-  authDomain: "azhizen-enroll-form.firebaseapp.com",
-  projectId: "azhizen-enroll-form",
-  storageBucket: "azhizen-enroll-form.firebasestorage.app",
-  messagingSenderId: "1096753653556",
-  appId: "1:1096753653556:web:65fe817a0c0457956be761",
-  measurementId: "G-EYQRHJ9FJL"
+  apiKey: "AIzaSyCUzzY2z6UkmgLMOcTGIpUkcz1bItMObFk",
+  authDomain: "azhizen-form.firebaseapp.com",
+  projectId: "azhizen-form",
+  storageBucket: "azhizen-form.firebasestorage.app",
+  messagingSenderId: "347001212098",
+  appId: "1:347001212098:web:36701fefdf6f8821cbff5b",
+  measurementId: "G-WRDP2HYDXL"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
-export { db };
+export { db, storage };
