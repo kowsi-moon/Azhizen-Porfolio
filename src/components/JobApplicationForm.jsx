@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from './firebase';
@@ -10,6 +10,8 @@ const JobApplicationForm = () => {
 
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
+  const [resumeFile, setResumeFile] = useState(null);
+  const [resumeBase64, setResumeBase64] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -33,12 +35,24 @@ const JobApplicationForm = () => {
     setEducation(updated);
   };
 
+  const handleResumeChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setResumeFile(file);
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setResumeBase64(reader.result); // Base64 string with data URI
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    // Collect form fields
     const formFields = {
       firstName: document.querySelector('input[placeholder="First name"]').value,
       lastName: document.querySelector('input[placeholder="Last name"]').value,
@@ -51,7 +65,6 @@ const JobApplicationForm = () => {
       message: document.querySelector('textarea')?.value || '',
     };
 
-    // Validate required fields
     if (
       !formFields.firstName ||
       !formFields.lastName ||
@@ -64,26 +77,34 @@ const JobApplicationForm = () => {
       setLoading(false);
       return;
     }
+
     if (formFields.email !== formFields.confirmEmail) {
       setError('Emails do not match.');
       setLoading(false);
       return;
     }
 
+    if (!resumeBase64) {
+      setError('Please upload your resume.');
+      setLoading(false);
+      return;
+    }
+
     try {
-      // Save form data to Firestore (no resume upload)
       await addDoc(collection(db, 'jobApplications'), {
         jobTitle: job.title,
         ...formFields,
         experience,
         education,
+        resume: resumeBase64,
         appliedAt: Timestamp.now(),
       });
 
       alert('Application submitted successfully!');
-      // Reset form
       setExperience([]);
       setEducation([]);
+      setResumeFile(null);
+      setResumeBase64('');
       document.querySelectorAll('input, textarea').forEach((input) => (input.value = ''));
     } catch (error) {
       console.error('Submission failed:', error);
@@ -130,6 +151,25 @@ const JobApplicationForm = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Resume Upload */}
+        <div className="mb-10">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Resume*</h2>
+          <div className="w-full border-2 border-dashed border-blue-300 bg-white-50 p-6 sm:p-8 rounded-md text-center text-sm">
+            <label htmlFor="resume-upload" className="cursor-pointer text-blue-600 hover:underline">
+              Choose a file <span className="text-black"> to drop here</span>
+            </label>
+            <input
+              id="resume-upload"
+              type="file"
+              accept=".pdf,.doc,.docx"
+              className="hidden"
+              onChange={handleResumeChange}
+            />
+            {resumeFile && <p className="text-sm mt-2 text-green-700">Selected: {resumeFile.name}</p>}
+            <p className="text-xs text-black-400 mt-2">10 mb size limit</p>
           </div>
         </div>
 
@@ -193,7 +233,7 @@ const JobApplicationForm = () => {
                 value={item.degree}
                 onChange={(e) => handleEducationChange(index, 'degree', e.target.value)}
               />
-              <inputg
+              <input
                 className="p-2 border rounded-md"
                 placeholder="Year"
                 value={item.year}
