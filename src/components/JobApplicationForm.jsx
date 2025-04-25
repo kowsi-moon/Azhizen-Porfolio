@@ -193,7 +193,7 @@ const JobApplicationForm = () => {
                 value={item.degree}
                 onChange={(e) => handleEducationChange(index, 'degree', e.target.value)}
               />
-              <input
+              <inputg
                 className="p-2 border rounded-md"
                 placeholder="Year"
                 value={item.year}
