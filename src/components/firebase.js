@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -9,6 +10,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyBfSOzUQPmXfjDqxnSRvO1JlZW8cbFEc8k",
   authDomain: "azhizen-solutions-portfolio.firebaseapp.com",
+  databaseURL: "https://azhizen-solutions-portfolio-default-rtdb.firebaseio.com/",
   projectId: "azhizen-solutions-portfolio",
   storageBucket: "azhizen-solutions-portfolio.firebasestorage.app",
   messagingSenderId: "1048325427961",
@@ -19,5 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const realtimeDb = getDatabase(app);
 
-export { db };
+export { db, realtimeDb }; 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from './firebase';
+import { getDatabase, ref, set } from 'firebase/database'; // Import RTDB modules
 
 const JobApplicationForm = () => {
   const location = useLocation();
@@ -91,6 +92,7 @@ const JobApplicationForm = () => {
     }
 
     try {
+      // Firestore document creation
       await addDoc(collection(db, 'jobApplications'), {
         jobTitle: job.title,
         ...formFields,
@@ -98,6 +100,18 @@ const JobApplicationForm = () => {
         education,
         resume: resumeBase64,
         appliedAt: Timestamp.now(),
+      });
+
+      // Firebase Realtime Database document creation
+      const dbRef = getDatabase();
+      const applicationRef = ref(dbRef, 'jobApplications/' + Timestamp.now().seconds);
+      await set(applicationRef, {
+        jobTitle: job.title,
+        ...formFields,
+        experience,
+        education,
+        resume: resumeBase64,
+        appliedAt: Timestamp.now().seconds,
       });
 
       alert('Application submitted successfully!');
@@ -271,9 +285,7 @@ const JobApplicationForm = () => {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className={`w-full sm:w-auto rounded bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white px-6 py-3 hover:brightness-110 transition text-base sm:text-lg font-medium ${
-              loading ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
+            className={`w-full sm:w-auto rounded bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white px-6 py-3 hover:brightness-110 transition text-base sm:text-lg font-medium ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {loading ? 'Submitting...' : 'Apply'}
           </button>

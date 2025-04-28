@@ -5,8 +5,9 @@ import icon3 from '../assets/icon3.png';
 import icon4 from '../assets/icon4.png';
 import icon5 from '../assets/icon5.png';
 import icon6 from '../assets/icon6.png';
-import { db } from './firebase';
+import { db, realtimeDb } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { ref, push, set } from 'firebase/database';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -25,13 +26,31 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitting data:', formData);
+  
     try {
+      // 1. Firestore
       const docRef = await addDoc(collection(db, 'contactForms'), {
         ...formData,
         timestamp: new Date(),
       });
       console.log('Document written with ID:', docRef.id);
       alert("Message Sent Successfully!");
+      console.log('Document written with ID (Firestore):', docRef.id);
+  
+      // 2. Realtime Database
+      const contactFormRef = ref(realtimeDb, 'contactForms');
+    
+      // Push data to Realtime DB
+      const newContactFormRef = push(contactFormRef);
+      await push(newContactFormRef, {
+        ...formData,
+        timestamp: new Date().toISOString(), // Add timestamp
+      });
+  
+      console.log('Data pushed to Realtime Database with key:', newContactFormRef.key);
+      alert('Message Sent Successfully!');
+      
+      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
@@ -41,7 +60,7 @@ function ContactForm() {
       });
     } catch (error) {
       console.error('Error adding document:', error.message, error.code);
-      alert("Submission Failed: " + error.message);
+      alert('Submission Failed: ' + error.message);
     }
   };
 
