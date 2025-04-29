@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import logo from "../assets/logo.jpg"; // Adjust the path accordingly
 
@@ -15,6 +15,11 @@ const Navbar = () => {
   const handleNavigation = (path) => {
     navigate(path);
   };
+
+  // Scroll to the top whenever the location changes (when the route changes)
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, [location]); // Depend on location, so it triggers on route change
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-10 top-0">
