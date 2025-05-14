@@ -8,7 +8,7 @@ const services = [
   { id: "service1", title: "Custom Hardware Design", img: service1, description: "We deliver advanced hardware prototyping with custom PCB design. Tailored solution for embedded systems and IoT innovation." },
   { id: "service2", title: "Rapid Prototyping", img: service2, description: "Our team accelerates development with swift prototyping. From concept to functional hardware in record time." },
   { id: "service3", title: "AI/ML & Firmware Integration", img: service3, description: "We integrate AI/ML capabilities and firmware updates. Smart, adaptable systems built for the future." },
-  { id: "service4", title: "Research & Development", img: service4, description: "Experts in Research and Development employ rigorous methodologies and validation processes. All solutions are developed in strict adherence to industry standards." }
+  { id: "service4", title: "Research & Development", img: service4, description: "Experts in Research and Development employ rigorous methodologies and validation processes." }
 ];
 
 const ServicesSection = () => {
@@ -59,7 +59,10 @@ const ServicesSection = () => {
         {/* Tablet, Desktop, and 4K View */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 2xl:gap-8 w-full mx-auto">
           {services.map((service, index) => (
-            <div key={service.id} className="flex flex-col text-center">
+            <div
+              key={service.id}
+              className="flex flex-col text-center"
+            >
               {index % 2 !== 0 && (
                 <div className="mb-4">
                   <h3 className="text-lg sm:text-xl 2xl:text-2xl font-semibold text-white mb-2 text-left">

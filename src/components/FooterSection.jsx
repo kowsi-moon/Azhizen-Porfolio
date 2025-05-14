@@ -82,7 +82,7 @@ const FooterSection = () => {
             >
               <img src={foot3} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="LinkedIn" />
             </a>
-            <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@AzhizenSolutions-pvt" target="_blank" rel="noopener noreferrer">
               <img src={foot4} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="Social 4" />
             </a>
           </div>
@@ -263,7 +263,7 @@ const FooterSection = () => {
             />
           </div>
           <div className="flex justify-center space-x-4 sm:space-x-6 mt-10 sm:mt-12">
-            <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/people/Azhizen-Solutions/61575392279457/?rdid=F1afgpHQQw3Yniwu&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19zoY5afgR%2F" target="_blank" rel="noopener noreferrer">
               <img src={foot1} className="w-6 h-6 sm:w-8 sm:h-8" alt="Social 1" />
             </a>
             <a
@@ -280,7 +280,7 @@ const FooterSection = () => {
             >
               <img src={foot3} className="w-6 h-6 sm:w-8 sm:h-8" alt="LinkedIn" />
             </a>
-            <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
+            <a href="www.youtube.com/@AzhizenSolutions-pvt" target="_blank" rel="noopener noreferrer">
               <img src={foot4} className="w-6 h-6 sm:w-8 sm:h-8" alt="Social 4" />
             </a>
           </div>
